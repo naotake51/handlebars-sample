@@ -1,28 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+{{#> layout }}
 
-<head>
-  {{> meta }}
-  <title>{{ common.title }}</title>
-</head>
+コンテンツ02
 
-<body>
-  {{> header }}
+<ul>
+  {{#each histories as |history|}}
+  <li>
+    <p>{{history.title}}</p>
+    <p>{{history.content}}</p>
+  </li>
+  {{/each}}
+</ul>
 
-  <main>
-    コンテンツ02
-
-    <ul>
-      {{#each histories}}
-      <li>
-        <p>{{this.title}}</p>
-        <p>{{this.content}}</p>
-      </li>
-      {{/each}}
-    </ul>
-  </main>
-
-  {{> footer }}
-</body>
-
-</html>
+{{/layout}}
