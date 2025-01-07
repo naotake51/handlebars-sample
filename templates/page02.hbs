@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    {{> meta }}
-    <title>{{ common.title }}</title>
-</head>
-<body>
-    {{> header }}
-    <main>
-        コンテンツ02
 
-        <ul>
-        {{#each histories}}
-            <li>
-                <p>{{this.title}}</p>
-                <p>{{this.content}}</p>
-            </li>
-        {{/each}}
-        </ul>
-    </main>
-    {{> footer }}
+<head>
+  {{> meta }}
+  <title>{{ common.title }}</title>
+</head>
+
+<body>
+  {{> header }}
+
+  <main>
+    コンテンツ02
+
+    <ul>
+      {{#each histories}}
+      <li>
+        <p>{{this.title}}</p>
+        <p>{{this.content}}</p>
+      </li>
+      {{/each}}
+    </ul>
+  </main>
+
+  {{> footer }}
 </body>
+
 </html>
