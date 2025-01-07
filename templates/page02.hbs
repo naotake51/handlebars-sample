@@ -8,6 +8,15 @@
     {{> header }}
     <main>
         コンテンツ02
+
+        <ul>
+        {{#each histories}}
+            <li>
+                <p>{{this.title}}</p>
+                <p>{{this.content}}</p>
+            </li>
+        {{/each}}
+        </ul>
     </main>
     {{> footer }}
 </body>
