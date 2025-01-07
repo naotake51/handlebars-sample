@@ -8,6 +8,8 @@ templates/にページ単位で.hbsファイルを作成する。
 
 変数はtemplates/variables配管にjsonファイルを作成して、`{{ ファイル名.キー名 }}`で各ページに埋め込む。
 
+https://handlebarsjs.com/guide/#what-is-handlebars
+
 ## 2. コンパイル
 
 ```sh
