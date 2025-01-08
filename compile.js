@@ -61,7 +61,20 @@ async function compileTemplates() {
             console.log(`Compiled: ${templatePath} -> ${outputPath}`);
         });
 
-        console.log('All templates compiled successfully!');
+        // templates/partsとtemplates/variables以外のディレクトリをdistにコピー
+        const directories = fs.readdirSync(INPUT_FOLDER).filter(file => {
+            const filePath = path.join(INPUT_FOLDER, file);
+            return fs.statSync(filePath).isDirectory() && file !== 'parts' && file !== 'variables';
+        });
+
+        for (const dir of directories) {
+            const srcDir = path.join(INPUT_FOLDER, dir);
+            const destDir = path.join(OUTPUT_FOLDER, dir);
+            await fs.copy(srcDir, destDir);
+            console.log(`Copied: ${srcDir} -> ${destDir}`);
+        }
+
+        console.log('All templates compiled and directories copied successfully!');
     } catch (err) {
         console.error('Error during compilation:', err);
     }
